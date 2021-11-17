@@ -12,7 +12,7 @@ const username = 'foo';
 const password = 'bar';
 
 app.use(cookieParser());
-app.use(session({ secret: 'hilfr', cookie: { maxAge: 60000 } }));
+app.use(session({ secret: 'cmnva.krugh', cookie: { maxAge: 60000 } }));
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -47,7 +47,7 @@ app.post('/login', (req, res) => {
 app.get('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
-})
+});
 
 app.get('/setCookie/:clr', (req, res) => {
   res.cookie('color', req.params.clr).send('eväste asetettu');
